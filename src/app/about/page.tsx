@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: " About | Good Deal",
+};
+
 const About: React.FC = () => {
   return <main>this is About page</main>;
 };
