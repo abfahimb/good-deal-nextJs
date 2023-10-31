@@ -1,0 +1,11 @@
+.footer-bg {
+    background: #f4f4f4;
+}
+
+.min-page-height {
+min-height:  calc(100vh - 289px);
+}
+
+.py-fix {
+    padding: 40px 0;
+}

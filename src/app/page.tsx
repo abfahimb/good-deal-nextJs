@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 const HomePage: React.FC = () => {
-  return <main>this is home page</main>;
+  return <main className="min-page-height">this is home page</main>;
 };
 
 export default HomePage;
