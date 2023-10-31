@@ -1,6 +1,11 @@
 import React from 'react';
+import {AiFillGithub, AiFillLinkedin} from "react-icons/ai";
+import {FaXTwitter} from "react-icons/fa6";
 
 const FooterMain:React.FC = () => {
+    const date = new Date();
+    let thisYear = date.getFullYear();
+
     return (
         <footer className="footer-area footer-bg py-fix">
            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-row flex-wrap">
@@ -36,6 +41,17 @@ const FooterMain:React.FC = () => {
                        <p>Saturday - Sunday : Close</p>
                    </div></div>
            </div>
+            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mt-8">
+                <hr />
+                <div className="flex flex-wrap pt-5 justify-between">
+                    <p> Copyright © 2021 - {thisYear} Abdullah, All Rights Reserved.</p>
+                    <div>
+                        <a href="https://github.com/abfahimb/good-deal-nextJs" target="_blank"><AiFillGithub /></a>
+                        <a href="https://www.linkedin.com/in/abfahimb/" target="_blank"><AiFillLinkedin /></a>
+                        <a href="https://twitter.com/abfahimb" target="_blank"><FaXTwitter /></a>
+                    </div>
+                </div>
+            </div>
         </footer>
     );
 };
