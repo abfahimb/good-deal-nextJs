@@ -1,6 +1,9 @@
+import React from "react";
 import type { Metadata } from "next";
 
 import "./globals.css";
+import FooterMain from "@/app/layout/footer/main";
+import HeaderMain from "@/app/layout/header/main";
 
 export const metadata: Metadata = {
   description: "opensource e-commerce nextjs project",
@@ -22,18 +25,16 @@ export const metadata: Metadata = {
   creator: "abdullah al fahim",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout:React.FC<{  children: React.ReactNode;}> = ({children}) => {
   return (
-    <html lang="en">
+      <html lang="en">
       <body>
-        <header>Ami head</header>
-        {children}
-        <footer>ami footer</footer>
+      <HeaderMain />
+      {children}
+      <FooterMain />
       </body>
-    </html>
+      </html>
   );
-}
+};
+
+export default RootLayout;
