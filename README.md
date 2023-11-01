@@ -9,8 +9,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
   </a>
   <img alt="License" src="https://img.shields.io/badge/license-MIT-5965e0">
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/abfahimb/good-deal-nextJs
-" />
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/abfahimb/good-deal-nextJs" />
   <a href="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
     <img alt="abfahimb" src="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
   </a>
