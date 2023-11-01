@@ -1,25 +1,49 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<p align="center">
+   <a href="https://www.linkedin.com/in/abfahimb">
+      <img alt="AbdullahAlFahim" src="https://img.shields.io/badge/-Abfahimb-5965e0?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
 
-First, run the development server:
+  <a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+  </a>
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-5965e0">
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/abfahimb/good-deal-nextJs
+" />
+  <a href="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
+    <img alt="abfahimb" src="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
+  </a>
+<img alt="abfahimb" src="https://img.shields.io/twitter/follow/abfahimb?logoColor=%2300acee">
+</p>
+
+<div align="center">
+  <sub> Built with 💜 by
+    <a href="https://github.com/Yagasaki7K">"Abdullah" Al Fahim</a>
+  </sub>
+</div>
+
+# 💻 Technologies
+
+This project was made using the follow technologies:
+
+* ReactJS
+* NextJS
+* TypeScript
+* Javascript
+* Tailwind CSS
+
+# 🚧 How to run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone Repository
+$ git clone https://github.com/Yagasaki7K/website-essentials.git
+$ Go to folder using terminal
+$ yarn (needs yarn installed)
+$ yarn dev (if you wanna change something) // yarn start (just to see running)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
+If you want something, wait for `yarn build` to be obeyed, and after that open a little change decision!
 
 ## Contribution Guidelines
 
