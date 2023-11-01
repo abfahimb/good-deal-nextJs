@@ -20,7 +20,9 @@
   <a href="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
     <img alt="abfahimb" src="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
   </a>
-<img alt="abfahimb" src="https://img.shields.io/twitter/follow/abfahimb?logoColor=%2300acee">
+<a href="https://twitter.com/abfahimb">
+ <img alt="abfahimb" src="https://img.shields.io/twitter/follow/abfahimb?logoColor=%2300acee">
+</a>
 </p>
 
 <div align="center">
