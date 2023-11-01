@@ -8,19 +8,23 @@
 
 
 <p align="center">
-   <a href="https://www.linkedin.com/in/abfahimb">
-      <img alt="AbdullahAlFahim" src="https://img.shields.io/badge/-Abfahimb-5965e0?style=flat&logo=Linkedin&logoColor=white" />
+   <a href="https://www.linkedin.com/in/abfahimb" target="_blank">
+      <img alt="abfahimb" src="https://img.shields.io/badge/-Abfahimb-5965e0?style=flat&logo=Linkedin&logoColor=white" />
    </a>
 
   <a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
   </a>
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-5965e0">
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/abfahimb/good-deal-nextJs" />
+ <a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+      <img alt="License" src="https://img.shields.io/badge/license-MIT-5965e0">
+  </a>
+<a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+    <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/abfahimb/good-deal-nextJs" />
+  </a>
   <a href="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
     <img alt="abfahimb" src="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
   </a>
-<a href="https://twitter.com/abfahimb">
+<a href="https://twitter.com/abfahimb" target="_blank">
  <img alt="abfahimb" src="https://img.shields.io/twitter/follow/abfahimb?logoColor=%2300acee">
 </a>
 </p>
