@@ -43,10 +43,10 @@ This project was made using the follow technologies:
 
 ```bash
 # Clone Repository
-$ git clone https://github.com/Yagasaki7K/website-essentials.git
+$ git clone https://github.com/abfahimb/good-deal-nextJs.git
 $ Go to folder using terminal
 $ yarn (needs yarn installed)
-$ yarn dev (if you wanna change something) // yarn start (just to see running)
+$ yarn dev (if you wanna change something)
 ```
 
 If you want something, wait for `yarn build` to be obeyed, and after that open a little change decision!
