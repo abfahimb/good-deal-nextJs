@@ -31,16 +31,16 @@
 
 <div align="center">
   <sub> Built with 💜 by
-    <a href="https://github.com/Yagasaki7K">"Abdullah" Al Fahim</a>
+    <a href="https://github.com/abfahimb">"Abdullah" Al Fahim</a>
   </sub>
 </div>
 
 
-# 👀 Demo Website
+## Demo Website
 
 👉  Demo: https://abfahim.com/
 
-# 💻 Technologies
+## 💻 Technologies
 
 This project was made using the follow technologies:
 
@@ -50,7 +50,7 @@ This project was made using the follow technologies:
 * Javascript
 * Tailwind CSS
 
-# 🚧 How to run
+## How to run
 
 ```bash
 # Clone Repository
