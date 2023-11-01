@@ -12,13 +12,13 @@
       <img alt="abfahimb" src="https://img.shields.io/badge/-Abfahimb-5965e0?style=flat&logo=Linkedin&logoColor=white" />
    </a>
 
-  <a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+  <a href="https://github.com/abfahimb/good-deal-nextJs">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
   </a>
- <a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+ <a href="https://github.com/abfahimb/good-deal-nextJs">
       <img alt="License" src="https://img.shields.io/badge/license-MIT-5965e0">
   </a>
-<a href="https://img.shields.io/github/last-commit/abfahimb/good-deal-nextJs">
+<a href="https://github.com/abfahimb/good-deal-nextJs">
     <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/abfahimb/good-deal-nextJs" />
   </a>
   <a href="https://img.shields.io/github/stars/abfahimb/good-deal-nextJs">
