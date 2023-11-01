@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br>
+
+![GOODDEAL](https://github.com/abfahimb/good-deal-nextJs/assets/76747782/826c11b4-e667-482f-b90d-019dab26d3dc)
+
+<p align='center'>
+<strong>The fastest way to Learn NextJs (Ecommerce System)</strong>
+<br>
+
 
 <p align="center">
    <a href="https://www.linkedin.com/in/abfahimb">
