@@ -64,7 +64,7 @@ jobs:
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -H "Content-Type: application/json" \
-          -d '{"body": "@{{ author.login }} Tests failed. This pull request will be closed."}' \
+          -d '{"body": "@{{ github.event.pull_request.user.login }} Tests failed. This pull request will be closed."}' \
           https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments
 
 
