@@ -8,9 +8,10 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issuesOpened: |
-            👋 @{{ author }}
+            👋 @{{ author }} 
             Thank you for raising an issue. We will will investigate into the matter and get back to you as soon as possible.
             Please make sure you have given us as much context as possible.
+
 
           pullRequestOpened: |
             👋 @{{ author }}
@@ -18,3 +19,8 @@ jobs:
             Please ensure you have followed our contributing guidelines before submitting your pull request [Guidelines](https://github.com/abfahimb/good-deal-nextJs#pull-request-guidelines). 
             We will review it as soon as possible. Failure to provide a pull request description with at least 50 characters may result in automatic closure of your pull request
           
+          pullRequestMerged: |
+            ❤️ @{{ author }}
+            🎉 Congratulations. 
+            Your issue has been successfully merged. Thank you for your contribution. 
+            Please feel free to raise more issues and continue contributing to the project.
