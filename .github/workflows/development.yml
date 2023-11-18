@@ -36,11 +36,3 @@ jobs:
       # build the react app
       - name: Build
         run: yarn run build
-
-      # check if the build is successful
-      - name: Check Build Status
-        run: |
-          if [ $? -ne 0 ]; then
-            echo "Build failed. Do not merge!"
-            exit 1
-          fi
