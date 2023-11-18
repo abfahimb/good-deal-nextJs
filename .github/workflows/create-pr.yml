@@ -1,26 +1,38 @@
 name: Auto Work on Issue
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  process-issue:
+  pull_request_testing:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      # checkout the repository content to github runner
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Create Pull Request
-        run: |
-          ISSUE_NUMBER=$(git log --grep='^Issue #' --pretty=format:"%s" -1 | grep -oP '\d+')
-          if [ -n "$ISSUE_NUMBER" ]; then
-            git checkout -b auto-pr-branch
-            git push origin auto-pr-branch
-            gh pr create --base main --head auto-pr-branch --title "Auto Pull Request for Issue #$ISSUE_NUMBER"
-          fi
+      # setup nodejs environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: "18.16.1"
+
+      # cache the dependencies to speed up the build
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # install dependencies
+      - name: Install dependencies
+        run: yarn install
+
+      # build the react app
+      - name: Build
+        run: yarn run build
