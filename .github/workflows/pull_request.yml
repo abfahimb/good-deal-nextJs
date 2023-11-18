@@ -43,7 +43,8 @@ jobs:
           DESCRIPTION_LENGTH=$(echo -n "$PR_DESCRIPTION" | wc -m)
           
            if [ "$DESCRIPTION_LENGTH" -lt 50 ]; then
-            echo "Error: Pull request description must be at least 50 characters long, Current length is $DESCRIPTION_LENGTH"
+           error_message="Pull request description must be at least 50 characters long, Current length is $DESCRIPTION_LENGTH"
+            echo "Error: $error_message"
             exit 1
           else
           echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
@@ -66,5 +67,5 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Content-Type: application/json" \
-            -d '{"state": "closed"}' \
+            -d "{\"state\": \"closed\", \"body\": \"$error_message\"}" \
             https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
