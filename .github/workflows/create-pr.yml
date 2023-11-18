@@ -1,11 +1,12 @@
 name: Auto Work on Issue
 
 on:
-  issues:
-    types:
-      - opened
-      - edited
-      - reopened
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   process-issue:
