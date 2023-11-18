@@ -36,3 +36,4 @@ jobs:
       # build the react app
       - name: Build
         run: yarn run build
+        
