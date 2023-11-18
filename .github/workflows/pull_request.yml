@@ -49,7 +49,7 @@ jobs:
           else
           echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
           fi
-
+ 
       # install dependencies
       - name: Install dependencies
         if: success()
