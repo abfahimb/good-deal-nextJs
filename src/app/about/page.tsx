@@ -5,7 +5,7 @@ export const metadata: Metadata = {
 };
 
 const About: React.FC = () => {
-  return <main className="min-page-height">this is About page</main>;
+  return <main className="min-page-height">this is About page testing cicd</main>;
 };
 
 export default About;
