@@ -60,6 +60,14 @@ jobs:
         if: success()
         run: yarn run build
 
+      - uses: wow-actions/auto-comment@v1
+        if: failure()
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpened: |
+            👋 @{{ author }}
+            Thank you for creating pull request. We not able to accept this pull request $error_message.
+
       - name: Change PR status to closed if any tests fail
         if: failure()
         run: |
@@ -70,9 +78,3 @@ jobs:
             -d '{"state": "closed"}' \
             https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
   
-      - uses: wow-actions/auto-comment@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesClosed: |
-            👋 @{{ author }}
-            Thank you for creating pull request. We not able to accept this pull request $error_message.
