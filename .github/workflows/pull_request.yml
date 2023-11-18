@@ -57,6 +57,17 @@ jobs:
         if: success()
         run: yarn run build
 
+      - name: Add comment before closing PR
+        if: failure()
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Content-Type: application/json" \
+          -d '{"body": "Tests failed. This pull request will be closed."}' \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments
+
+
       - name: Change PR status to closed if any tests fail
         if: failure()
         run: |
@@ -66,13 +77,3 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"state": "closed"}' \
             https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
-  
-      - name: Auto comment on issue or pull request
-        if: failure() 
-        uses: wow-actions/auto-comment@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesClosed: |
-            👋 @{{ author }}
-            Thank you for raising an issue. We will investigate into the matter and get back to you as soon as possible.
-            Please make sure you have given us as much context as possible.
