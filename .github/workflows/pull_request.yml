@@ -42,16 +42,16 @@ jobs:
           if [ "$DESCRIPTION_LENGTH" -lt 50 ]; then
             echo "Error: Pull request description must be at least 50 characters long."
             
-            # Set the pull request status to "rejected"
-            gh pr status ${{ github.event.pull_request.number }} --state error --description "Description length check failed" --context "workflow/failed"
+            # Set the pull request status to "error"
+            gh pr review --approve --body "Description length check failed" --state changes_requested ${{ github.event.pull_request.number }}
 
             # Close the pull request
             gh pr close ${{ github.event.pull_request.number }}
+              
             exit 1
           else
             echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
           fi
-
       # Install dependencies only if the PR has the expected description
       - name: Install dependencies
         if: success()
