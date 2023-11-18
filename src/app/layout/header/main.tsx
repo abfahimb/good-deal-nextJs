@@ -40,7 +40,7 @@ const HeaderMain = () => {
                                             className="h-8 w-auto"
                                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                                             alt="Your Company"
-                                        />
+                                        /> the icon will be here for tha too collenct the  
                                     </div>
                                     <div className="hidden sm:ml-6 sm:block">
                                         <div className="flex space-x-4">
