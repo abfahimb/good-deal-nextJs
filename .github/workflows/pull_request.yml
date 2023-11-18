@@ -40,7 +40,7 @@ jobs:
           DESCRIPTION_LENGTH=$(echo -n "$PR_DESCRIPTION" | wc -m)
           
            if [ "$DESCRIPTION_LENGTH" -lt 50 ]; then
-            echo "Error: Pull request description must be at least 50 characters long."
+            echo "Error: Pull request description must be at least 50 characters long, Current length is $DESCRIPTION_LENGTH"
             exit 1
           else
           echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
