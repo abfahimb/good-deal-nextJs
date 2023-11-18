@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  development:
+  production:
     runs-on: ubuntu-latest
 
     steps:
