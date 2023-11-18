@@ -1,0 +1,25 @@
+name: Auto Work on Issue
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
+
+jobs:
+  process-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Create Pull Request
+        run: |
+          ISSUE_NUMBER=$(git log --grep='^Issue #' --pretty=format:"%s" -1 | grep -oP '\d+')
+          if [ -n "$ISSUE_NUMBER" ]; then
+            git checkout -b auto-pr-branch
+            git push origin auto-pr-branch
+            gh pr create --base main --head auto-pr-branch --title "Auto Pull Request for Issue #$ISSUE_NUMBER"
+          fi
