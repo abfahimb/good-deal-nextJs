@@ -59,7 +59,7 @@ jobs:
       
 
       - name: Comment and close on failure
-        if: failure()
+        if: failure() && github.event.pull_request.state != 'closed'
         run: |
           PR_AUTHOR=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} | jq -r '.user.login')
