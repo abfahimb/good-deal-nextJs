@@ -38,18 +38,37 @@ jobs:
                           https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} | jq -r '.body')
           
           DESCRIPTION_LENGTH=$(echo -n "$PR_DESCRIPTION" | wc -m)
-          
-           if [ "$DESCRIPTION_LENGTH" -lt 50 ]; then
-            echo "Error: Pull request description must be at least 50 characters long, Current length is $DESCRIPTION_LENGTH"
+
+          if [ "$DESCRIPTION_LENGTH" -lt 50 ]; then
+            echo "Error: Pull request description must be at least 50 characters long."
+            
+            # Set the pull request status to "rejected"
+            gh pr status ${{ github.event.pull_request.number }} --state error --description "Description length check failed" --context "workflow/failed"
+
+            # Close the pull request
+            gh pr close ${{ github.event.pull_request.number }}
             exit 1
           else
-          echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
+            echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
           fi
 
-      # install dependencies
+      # Install dependencies only if the PR has the expected description
       - name: Install dependencies
+        if: success()
         run: yarn install
 
-      # build the react app
+      # Build the react app only if the PR has the expected description
       - name: Build
+        if: success()
         run: yarn run build
+
+      # Check if the previous steps were successful before merging
+      - name: Check Previous Steps
+        if: success()
+        run: echo "Previous steps were successful."
+        # Add any additional steps or commands you need here
+
+      # Merge the PR only if the previous steps were successful
+      - name: Merge Pull Request
+        if: success()
+        run: gh pr merge ${{ github.event.pull_request.number }} --squash --auto
