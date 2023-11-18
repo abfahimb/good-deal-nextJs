@@ -3,7 +3,7 @@ name: Good Deal NextJs
 on:
   push:
     branches:
-      - development
+      - main
 
 jobs:
   production:
