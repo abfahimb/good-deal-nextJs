@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+    types:
+      - opened
+      - synchronize
 
 jobs:
   pull_request_testing:
@@ -40,12 +43,13 @@ jobs:
           DESCRIPTION_LENGTH=$(echo -n "$PR_DESCRIPTION" | wc -m)
           
            if [ "$DESCRIPTION_LENGTH" -lt 50 ]; then
-            echo "Error: Pull request description must be at least 50 characters long, Current length is $DESCRIPTION_LENGTH"
+           error_message="Pull request description must be at least 50 characters long, Current length is $DESCRIPTION_LENGTH"
+            echo "Error: $error_message"
             exit 1
           else
           echo "Success: Pull request description length is $DESCRIPTION_LENGTH characters."
           fi
-
+ 
       # install dependencies
       - name: Install dependencies
         if: success()
