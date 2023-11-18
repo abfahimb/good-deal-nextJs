@@ -68,13 +68,13 @@ jobs:
             👋 @{{ author }}
             Thank you for creating pull request. We not able to accept this pull request $error_message.
 
-      - name: Change PR status to closed if any tests fail
-        if: failure()
-        run: |
-          curl -X PATCH \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Content-Type: application/json" \
-            -d '{"state": "closed"}' \
-            https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
+      # - name: Change PR status to closed if any tests fail
+      #   if: failure()
+      #   run: |
+      #     curl -X PATCH \
+      #       -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+      #       -H "Accept: application/vnd.github.v3+json" \
+      #       -H "Content-Type: application/json" \
+      #       -d '{"state": "closed"}' \
+      #       https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
   
