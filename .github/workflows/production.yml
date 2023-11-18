@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  production:
+  development:
     runs-on: ubuntu-latest
 
     steps:
