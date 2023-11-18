@@ -57,20 +57,18 @@ jobs:
         if: success()
         run: yarn run build
       
-      - name: Get PR Author
-        id: pr_author
-        run: |
-          echo "::set-output name=author::$(curl -s -H \"Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}\" https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} | jq -r '.user.login')"
-
 
       - name: Add comment before closing PR
         if: failure()
         run: |
+          PR_AUTHOR=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} | jq -r '.user.login')
+          COMMENT_BODY="🚨 Tests failed. This pull request will be closed. @$PR_AUTHOR"
           curl -X POST \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -H "Content-Type: application/json" \
-          -d '{"body": "🚨 Tests failed. This pull request will be closed. @'${{ steps.pr_author.outputs.author }}'"}' \
+          -d '{"body": "'"$COMMENT_BODY"'"}' \
           https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments
 
 
